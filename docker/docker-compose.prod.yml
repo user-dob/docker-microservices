@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+
+  kafka:
+    env_file:
+      - ../env/.prod.env

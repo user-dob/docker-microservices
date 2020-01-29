@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  app:
+    image: services/app
+    container_name: foo-services-app
+    build:
+      context: ../services/app
+      dockerfile: docker/Dockerfile
+    env_file:
+      - ../env/.env
+    ports:
+      - "4201:3000"
+    depends_on:
+      - zookeeper
+      - kafka
